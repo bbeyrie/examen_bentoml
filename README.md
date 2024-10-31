@@ -65,6 +65,15 @@ bentoml serve src.service:svc --reload
 Testez l'API avec `curl` ou Postman en envoyant des requêtes POST contenant les données d'un étudiant.
 
 ```bash
+curl -X POST http://0.0.0.0:3000/login \
+-H "Content-Type: application/json" \
+-d '{
+    "username": "bento",
+    "password": "bento"
+}'
+```
+
+```bash
 curl -X POST http://0.0.0.0:3000/predict -H "Content-Type: application/json" -d '{
     "GRE_Score": 320,
     "TOEFL_Score": 110,
